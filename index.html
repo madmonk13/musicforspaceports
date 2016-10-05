@@ -1,0 +1,482 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>Music for Spaceports</TITLE>
+<script>
+var notes = [];
+notes['C0'] = 16.351;
+notes['C#0'] = 17.324;
+notes['Db0'] = 17.324;
+notes['D0'] = 18.354;
+notes['D#0'] = 19.445;
+notes['Eb0'] = 19.445;
+notes['E0'] = 20.601;
+notes['F0'] = 21.827;
+notes['F#0'] = 23.124;
+notes['Gb0'] = 23.124;
+notes['G0'] = 24.499;
+notes['G#0'] = 25.956;
+notes['Ab0'] = 25.956;
+notes['A0'] = 27.5;
+notes['A#0'] = 29.135;
+notes['Bb0'] = 29.135;
+notes['B0'] = 30.868;
+notes['C1'] = 32.703;
+notes['C#1'] = 34.648;
+notes['Db1'] = 34.648;
+notes['D1'] = 36.708;
+notes['D#1'] = 38.891;
+notes['Eb1'] = 38.891;
+notes['E1'] = 41.203;
+notes['F1'] = 43.654;
+notes['F#1'] = 46.249;
+notes['Gb1'] = 46.249;
+notes['G1'] = 48.999;
+notes['G#1'] = 51.913;
+notes['Ab1'] = 51.913;
+notes['A1'] = 55;
+notes['A#1'] = 58.27;
+notes['Bb1'] = 58.27;
+notes['B1'] = 61.735;
+notes['C2'] = 65.406;
+notes['C#2'] = 69.296;
+notes['Db2'] = 69.296;
+notes['D2'] = 73.416;
+notes['D#2'] = 77.782;
+notes['Eb2'] = 77.782;
+notes['E2'] = 82.407;
+notes['F2'] = 87.307;
+notes['F#2'] = 92.499;
+notes['Gb2'] = 92.499;
+notes['G2'] = 97.999;
+notes['G#2'] = 103.826;
+notes['Ab2'] = 103.826;
+notes['A2'] = 110;
+notes['A#2'] = 116.541;
+notes['Bb2'] = 116.541;
+notes['B2'] = 123.471;
+notes['C3'] = 130.813;
+notes['C#3'] = 138.591;
+notes['Db3'] = 138.591;
+notes['D3'] = 146.832;
+notes['D#3'] = 155.563;
+notes['Eb3'] = 155.563;
+notes['E3'] = 164.814;
+notes['F3'] = 174.614;
+notes['F#3'] = 184.997;
+notes['Gb3'] = 184.997;
+notes['G3'] = 195.998;
+notes['G#3'] = 207.652;
+notes['Ab3'] = 207.652;
+notes['A3'] = 220;
+notes['A#3'] = 233.082;
+notes['Bb3'] = 233.082;
+notes['B3'] = 246.942;
+notes['C4'] = 261.626;
+notes['C#4'] = 277.183;
+notes['Db4'] = 277.183;
+notes['D4'] = 293.665;
+notes['D#4'] = 311.127;
+notes['Eb4'] = 311.127;
+notes['E4'] = 329.628;
+notes['F4'] = 349.228;
+notes['F#4'] = 369.994;
+notes['Gb4'] = 369.994;
+notes['G4'] = 391.995;
+notes['G#4'] = 415.305;
+notes['Ab4'] = 415.305;
+notes['A4'] = 440;
+notes['A#4'] = 466.164;
+notes['Bb4'] = 466.164;
+notes['B4'] = 493.883;
+notes['C5'] = 523.251;
+notes['C#5'] = 554.365;
+notes['Db5'] = 554.365;
+notes['D5'] = 587.33;
+notes['D#5'] = 622.254;
+notes['Eb5'] = 622.254;
+notes['E5'] = 659.255;
+notes['F5'] = 698.456;
+notes['F#5'] = 739.989;
+notes['Gb5'] = 739.989;
+notes['G5'] = 783.991;
+notes['G#5'] = 830.609;
+notes['Ab5'] = 830.609;
+notes['A5'] = 880;
+notes['A#5'] = 932.328;
+notes['Bb5'] = 932.328;
+notes['B5'] = 987.767;
+notes['C6'] = 1046.502;
+notes['C#6'] = 1108.731;
+notes['Db6'] = 1108.731;
+notes['D6'] = 1174.659;
+notes['D#6'] = 1244.508;
+notes['Eb6'] = 1244.508;
+notes['E6'] = 1318.51;
+notes['F6'] = 1396.913;
+notes['F#6'] = 1479.978;
+notes['Gb6'] = 1479.978;
+notes['G6'] = 1567.982;
+notes['G#6'] = 1661.219;
+notes['Ab6'] = 1661.219;
+notes['A6'] = 1760;
+notes['A#6'] = 1864.655;
+notes['Bb6'] = 1864.655;
+notes['B6'] = 1975.533;
+notes['C7'] = 2093.005;
+notes['C#7'] = 2217.461;
+notes['Db7'] = 2217.461;
+notes['D7'] = 2349.318;
+notes['D#7'] = 2489.016;
+notes['Eb7'] = 2489.016;
+notes['E7'] = 2637.021;
+notes['F7'] = 2793.826;
+notes['F#7'] = 2959.955;
+notes['Gb7'] = 2959.955;
+notes['G7'] = 3135.964;
+notes['G#7'] = 3322.438;
+notes['Ab7'] = 3322.438;
+notes['A7'] = 3520;
+notes['A#7'] = 3729.31;
+notes['Bb7'] = 3729.31;
+notes['B7'] = 3951.066;
+notes['C8'] = 4186.009;
+notes['C#8'] = 4434.922;
+notes['Db8'] = 4434.922;
+notes['D8'] = 4698.636;
+notes['D#8'] = 4978.032;
+notes['Eb8'] = 4978.032;
+notes['E8'] = 5274.042;
+notes['F8'] = 5587.652;
+notes['F#8'] = 5919.91;
+notes['Gb8'] = 5919.91;
+notes['G8'] = 6271.928;
+notes['G#8'] = 6644.876;
+notes['Ab8'] = 6644.876;
+notes['A8'] = 7040;
+notes['A#8'] = 7458.62;
+notes['Bb8'] = 7458.62;
+notes['B8'] = 7902.132;
+notes['C9'] = 8372.018;
+notes['C#9'] = 8869.844;
+notes['Db9'] = 8869.844;
+notes['D9'] = 9397.272;
+notes['D#9'] = 9956.064;
+notes['Eb9'] = 9956.064;
+notes['E9'] = 10548.084;
+notes['F9'] = 11175.304;
+notes['F#9'] = 11839.82;
+notes['Gb9'] = 11839.82;
+notes['G9'] = 12543.856;
+notes['G#9'] = 13289.752;
+notes['Ab9'] = 13289.752;
+notes['A9'] = 14080;
+notes['A#9'] = 14917.24;
+notes['Bb9'] = 14917.24;
+notes['B9'] = 15804.264;
+
+
+var audio = new window.AudioContext();
+
+function synth(f,v,a,d,x,y,z) {
+	var attack = a,
+		decay = d,
+		gain = audio.createGain(),
+		osc = audio.createOscillator();
+	gain.connect(audio.destination);
+	gain.gain.setValueAtTime(0, audio.currentTime);
+	gain.gain.linearRampToValueAtTime(v, audio.currentTime + attack / 1000);
+	gain.gain.linearRampToValueAtTime(0, audio.currentTime + decay / 1000);
+
+	panner = audio.createPanner();
+	panner.setPosition(x,y,z);
+	osc.connect(panner);
+	panner.connect(audio.destination);
+
+	osc.frequency.value = f;
+	osc.type = "sine";
+	osc.connect(gain);
+	osc.start(0);
+	setTimeout(function() {
+		osc.stop(0);
+		osc.disconnect(gain);
+		gain.disconnect(audio.destination);
+	}, decay)
+}
+
+
+
+var t;
+
+function musicForSpaceports(notes){
+
+	if ( document.getElementById("scale").value == -1 ){
+		document.body.style.backgroundColor = "#666";
+		return;
+	}
+
+	switch(document.getElementById("scale").value){
+
+		case "0":
+		//Sol - Fm M7
+		var useScale = new Array ("F1","F2","C2","F3","C3","F4","G#4","C5","E5","G#5","C6","E6","F#6","A6","C7");
+		document.body.style.backgroundColor = "#FFCF48";
+		break;
+
+		case "1":
+		//Mercury - BM7
+		var useScale = new Array ("B1","F#2","B2","F#3","B3","D#4","F#4","G#4","B4","D#5","F#5","G#5","B6","F#7");
+		document.body.style.backgroundColor = "#99949a";
+		break;
+
+		case "2":
+		// Venus - G#M7 9 11
+		var useScale = new Array ("G#0","G#1","G#2","D#2","G#3","C4","D#4","G#4","C5","D#5","G5","A#5","C6","D#6","G6","Bb6","C7","Eb7");
+		document.body.style.backgroundColor = "#e9d0af";
+		break;
+
+		case "4":
+		// Mars - Dm7
+		var useScale = new Array ("D1","D2","A2","D3","F3","A3","D4","F4","A4","C5","D5","F5","A5","C6","D6","F6","A6","C7");
+		document.body.style.backgroundColor = "#ac7a48";
+		break;
+
+		case "5":
+		//Jupiter - Eb7
+		var useScale = new Array ("D#1","D#2","A#2","D#3","A#3","D#4","G4","A#4","C#5","D#5","G5","A#5","D#6","G6","Bb6","D7");
+		document.body.style.backgroundColor = "#f0a478";
+
+		case "6":
+		// Saturn - GM
+		var useScale = new Array ("G1","G2","D2","G3","B3","D4","G4","B4","D5","F#5","B5","D6","G6","B6","D7");
+		document.body.style.backgroundColor = "#f6d5a3";
+		break;
+
+		case "7":
+		// Uranus - C#m 7 9 11
+		var useScale = new Array ("C#1","C#2","G#2","C#3","E3","G#3","C#4","E4","G#4","B4","D#5","F#5","G#5","C#6","E6","G#6","B6","D#7");
+		document.body.style.backgroundColor = "#b9f3f3";
+		break;
+
+		case "8":
+		// Neptune - A6
+		var useScale = new Array ("A1","A2","E3","A3","B3","D4","E4","A4","D5","E5","A5","B5","D6","E6","A6","B6","D7");
+		document.body.style.backgroundColor = "#74a7f5";
+		break;
+
+		case "9":
+		// Pluto - Esus7
+		var useScale = new Array ("E1","E2","B2","E3","B3","E4","A4","B4","E5","A5","B5","E6","A6","B6","E7");
+		document.body.style.backgroundColor = "#8b8b8b";
+		break;
+
+		case "10":
+		// Asteroid Belt - Bbm79
+		var useScale = new Array ("A#1","A#2","F3","A#3","C#4","F4","G#4","D#5","F5","G#5","D#6","F#7","A7");
+		document.body.style.backgroundColor = "#8A795D";
+		break;
+
+		case "11":
+		// Kuiper Belt - F#sus9
+		var useScale = new Array ("F#1","F#2","C#3","F#3","B3","C#4","F#4","B4","C#5","F#5","G#5","B5","F#6","B6","D#7");
+		document.body.style.backgroundColor = "#414A4C";
+		break;
+
+		case "12":
+		// The Final Frontier - Ascending Fourths
+		var useScale = new Array ("E2","B2","E3","B3","E4","A4","D5","G5","B5","E6","A6","D7");
+		document.body.style.backgroundColor = "#DDD";
+		break;
+
+		case "13":
+		// Black Hole - Whole tones
+		var useScale = new Array ("F#1","C2","G#2","D3","A3","D#4","F4","B4","E5","A#5","F6","B6","F7");
+		document.body.style.backgroundColor = "#000";
+		break;
+
+		default:
+		// CM6
+		var useScale = new Array ("C1","C2","G2","C3","G3","C4","D4","E4","G4","A4","C5","D5","E5","G5","A5","C6","D6","E6","G6","A6","C7");
+		document.body.style.backgroundColor = "#5b79b5";
+		break;
+
+	}
+
+	// generate note basics
+	var volume = Math.random()*0.15
+	var attack = Math.random()*1000
+	var length = (Math.random()*5000) + 5000;
+	var delay = Math.random()*(document.getElementById("active").value);
+
+	var x = (Math.random()*300 - 150);
+	var y = (Math.random()*300 - 150);
+	var z = (Math.random()*300 - 150);
+
+	// pick note from scale at random
+	var note = Math.floor(Math.random()*(useScale.length));
+
+	// attenuate high notes to make them less piercing
+	var volMod = 1 - (note/useScale.length);
+	volume = volume * volMod;
+
+	// generate note length
+	var release = attack + length;
+	var playNote = notes[useScale[note]];
+
+	// play note
+	synth(playNote,volume,attack,release,x,y,z);
+
+	// visual tone
+
+	var tx = Math.random()*90 + 5;
+	var ty = Math.random()*90 + 5;
+	var tid = Math.random()*999999999999;
+	var thing = document.createElement("div");
+	thing.id = "thing_"+tid;
+	thing.setAttribute("class","tone");
+	thing.setAttribute("style","left:"+tx+"%;top:"+ty+"%;");
+	document.body.appendChild(thing);
+	var thing_remove = setTimeout(function(){document.getElementById("thing_"+tid).parentNode.removeChild(document.getElementById("thing_"+tid));},9900);
+
+
+	// play next note
+	t = setTimeout(function(){musicForSpaceports(notes);},delay);
+
+}
+
+var d;
+function drift(v){
+	if ( v == 0 ){
+		return
+	}
+	else {
+		var driftTime = document.getElementById("active").value;
+		driftTime = driftTime * 60; // seconds to minutes
+		var r = Math.random();
+		driftTime = driftTime * r;
+		var d = setTimeout(function(){randomOrbit(1);},driftTime);
+	}
+}
+
+function randomOrbit(x){
+	var o = Math.floor(Math.random()*document.getElementById("scale").length);
+	document.getElementById("scale").value = o;
+	musicForSpaceports(notes);
+	if ( x == 1 ){
+		drift(1);
+	}
+}
+</script>
+<style>
+body {
+	font-family:  "Lucida Console", Monaco, monospace;
+	background-color: #666;
+	transition: background-color 10s ease;
+}
+
+h1 {
+	font-size: 36px;
+	color: rgba(255,255,255,0.25);
+	padding: 20px 40px;
+}
+
+#choose {
+	display: block;
+	text-align: center;
+	width: 500px;
+	height: auto;
+	padding: 10px;
+	position: fixed;
+	right: 10%;
+	top: 10%;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	background-color: rgba(255,255,255,0.25);
+	z-index:9999;
+}
+#choose input, select {
+	font-size: 24px;
+	color: #000;
+	border-radius: 10px;
+	background-color: rgba(255,255,255,0.25);
+	width: 98%;
+	margin: 5px;
+}
+
+.tone {
+	display: block;
+	position: fixed;
+	left: 20%;
+	bottom: 30%;
+	width: 50px;
+	height: 50px;
+	border-radius: 10px;
+	background-color: rgba(255,255,255,0.4);
+	animation-name: tone;
+	animation-duration: 10s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+	z-index: 1;
+}
+
+@keyframes tone {
+	0% { transform: scale(0,0) rotate(-300deg); opacity: 0; }
+	5% { transform: scale(2,2) rotate(-360deg); opacity: 1;}
+	100% { transform: scale(0,0) rotate(0deg); opacity: 0; }
+}
+
+#about {
+	display: block;
+	position:fixed;
+	text-align: left;
+	bottom: 10px;
+	right: 10px;
+	padding: 20px;
+	background-color: rgba(255,255,255,0.5);
+	width: 300px;
+	height: auto;
+	font-size: 12px;
+	border-radius:10px;
+}
+</style>
+</HEAD>
+<BODY onload="musicForSpaceports(notes);">
+<h1>Music for Spaceports</h1>
+<div id="choose">
+	<select name="scale" id="scale" onchange="musicForSpaceports(notes);" title="This chooses the set of notes to pick from.">
+		<option value = -1 selected > No Destination Selected </option>
+		<option value = 0 > Sol </option>
+		<option value = 1 > Mercury </option>
+		<option value = 2 > Venus </option>
+		<option value = 3 > Earth </option>
+		<option value = 4 > Mars </option>
+		<option value = 10 > Asteroid Belt </option>
+		<option value = 5 > Jupiter </option>
+		<option value = 6 > Saturn </option>
+		<option value = 7 > Uranus </option>
+		<option value = 8 > Netpune </option>
+		<option value = 9 > Pluto </option>
+		<option value = 11 > Kuiper Belt </option>
+		<option value = 12 > The Final Frontier </option>
+		<option value = 13 > Black Hole </option>
+	</select>
+	<br/>
+	<select name="active" id="active" onchange="musicForSpaceports(notes);" title="This chooses the frequency of note choice.">
+		<option value=12000>Impulse Power</option>
+		<option value=6000 selected>Sublights</option>
+		<option value=2000>Warp Drive</option>
+	</select>
+	<select name="drift" id="drift" onchange="drift(this.value);" title="This chooses wether or not to randomly move to other note sets.">
+		<option value="0">Maintain Orbit</option>
+		<option value="1">Drift</option>
+	</select>
+</div>
+<div id="about">
+	<p>This is a quick project I put together in effort to learn HTML5's AudioContext.  It was inspired, and named after, Brian Eno's "Music for Airports".  Thanks to the following tutorials:</p>
+	<ul>
+		<li><a href="https://www.html5rocks.com/en/tutorials/webaudio/intro/" target="_blank">Getting Started with Web Audio API - HTML5 Rocks</a></li>
+		<li><a href="https://modernweb.com/2013/10/28/audio-synthesis-in-javascript/" target="_blank">Audio Synthesis in JavaScript</a></li>
+	</ul>
+</div>
+</BODY>
+</HTML>
