@@ -178,7 +178,7 @@ notes['B9'] = 15804.264;
 
 var audio = new window.AudioContext();
 
-function synth(f,v,a,d,x,y,z) {
+function synth(w,f,v,a,d,x,y,z) {
 	var attack = a,
 		decay = d,
 		gain = audio.createGain(),
@@ -193,8 +193,16 @@ function synth(f,v,a,d,x,y,z) {
 	osc.connect(panner);
 	panner.connect(audio.destination);
 
+	/*
+	var filter = audio.createBiquadFilter();
+	osc.connect(filter);
+	filter.connect(audio.destination);
+	filter.type = 'lowpass';
+	filter.frequency.value = 1000;
+	*/
+
 	osc.frequency.value = f;
-	osc.type = "sine";
+	osc.type = w;
 	osc.connect(gain);
 	osc.start(0);
 	setTimeout(function() {
@@ -211,7 +219,7 @@ var t;
 function musicForSpaceports(notes){
 
 	if ( document.getElementById("scale").value == -1 ){
-		document.body.style.backgroundColor = "#666";
+		document.body.style.backgroundColor = "#333";
 		return;
 	}
 
@@ -219,7 +227,7 @@ function musicForSpaceports(notes){
 
 		case "0":
 		//Sol - Fm M7
-		var useScale = new Array ("F1","F2","C2","F3","C3","F4","G#4","C5","E5","G#5","C6","E6","F#6","A6","C7");
+		var useScale = new Array ("F2","F2","C2","F3","C3","F4","G#4","C5","E5","G#5","C6","E6","F#6","A6","C7");
 		document.body.style.backgroundColor = "#FFCF48";
 		break;
 
@@ -231,72 +239,72 @@ function musicForSpaceports(notes){
 
 		case "2":
 		// Venus - G#M7 9 11
-		var useScale = new Array ("G#0","G#1","G#2","D#2","G#3","C4","D#4","G#4","C5","D#5","G5","A#5","C6","D#6","G6","Bb6","C7","Eb7");
+		var useScale = new Array ("G#2","G#2","G#2","D#2","G#3","C4","D#4","G#4","C5","D#5","G5","A#5","C6","D#6","G6","Bb6","C7","Eb7");
 		document.body.style.backgroundColor = "#e9d0af";
 		break;
 
 		case "4":
 		// Mars - Dm7
-		var useScale = new Array ("D1","D2","A2","D3","F3","A3","D4","F4","A4","C5","D5","F5","A5","C6","D6","F6","A6","C7");
+		var useScale = new Array ("D2","D2","A2","D3","F3","A3","D4","F4","A4","C5","D5","F5","A5","C6","D6","F6","A6","C7");
 		document.body.style.backgroundColor = "#ac7a48";
 		break;
 
 		case "5":
 		//Jupiter - Eb7
-		var useScale = new Array ("D#1","D#2","A#2","D#3","A#3","D#4","G4","A#4","C#5","D#5","G5","A#5","D#6","G6","Bb6","D7");
+		var useScale = new Array ("Eb2","Eb2","bB2","Eb3","Bb3","Eb4","G4","Bb4","Db5","Eb5","G5","Bb5","Eb6","G6","Bb6","D7");
 		document.body.style.backgroundColor = "#f0a478";
 
 		case "6":
-		// Saturn - GM
-		var useScale = new Array ("G1","G2","D2","G3","B3","D4","G4","B4","D5","F#5","B5","D6","G6","B6","D7");
+		// Saturn - GM7
+		var useScale = new Array ("G2","G2","D2","G3","B3","D4","G4","B4","D5","F#5","B5","D6","G6","B6","D7");
 		document.body.style.backgroundColor = "#f6d5a3";
 		break;
 
 		case "7":
 		// Uranus - C#m 7 9 11
-		var useScale = new Array ("C#1","C#2","G#2","C#3","E3","G#3","C#4","E4","G#4","B4","D#5","F#5","G#5","C#6","E6","G#6","B6","D#7");
+		var useScale = new Array ("C#2","C#2","G#2","C#3","E3","G#3","C#4","E4","G#4","B4","D#5","F#5","G#5","C#6","E6","G#6","B6","D#7");
 		document.body.style.backgroundColor = "#b9f3f3";
 		break;
 
 		case "8":
 		// Neptune - A6
-		var useScale = new Array ("A1","A2","E3","A3","B3","D4","E4","A4","D5","E5","A5","B5","D6","E6","A6","B6","D7");
+		var useScale = new Array ("A2","A2","E3","A3","B3","D4","E4","A4","D5","E5","A5","B5","D6","E6","A6","B6","D7");
 		document.body.style.backgroundColor = "#74a7f5";
 		break;
 
 		case "9":
 		// Pluto - Esus7
-		var useScale = new Array ("E1","E2","B2","E3","B3","E4","A4","B4","E5","A5","B5","E6","A6","B6","E7");
+		var useScale = new Array ("E2","E2","B2","E3","B3","E4","A4","B4","E5","A5","B5","E6","A6","B6","E7");
 		document.body.style.backgroundColor = "#8b8b8b";
 		break;
 
 		case "10":
 		// Asteroid Belt - Bbm79
-		var useScale = new Array ("A#1","A#2","F3","A#3","C#4","F4","G#4","D#5","F5","G#5","D#6","F#7","A7");
+		var useScale = new Array ("Bb2","Bb2","F3","Bb3","Db4","F4","Ab4","Eb5","F5","Ab5","Eb6","Gb7","Ab7");
 		document.body.style.backgroundColor = "#8A795D";
 		break;
 
 		case "11":
 		// Kuiper Belt - F#sus9
-		var useScale = new Array ("F#1","F#2","C#3","F#3","B3","C#4","F#4","B4","C#5","F#5","G#5","B5","F#6","B6","D#7");
+		var useScale = new Array ("F#2","F#2","C#3","F#3","B3","C#4","F#4","B4","C#5","F#5","G#5","B5","F#6","B6","D#7");
 		document.body.style.backgroundColor = "#414A4C";
 		break;
 
 		case "12":
-		// The Final Frontier - Ascending Fourths
-		var useScale = new Array ("E2","B2","E3","B3","E4","A4","D5","G5","B5","E6","A6","D7");
+		// The Final Frontier - Based on the intro of the Star Trek Theme (original tv show)
+		var useScale = new Array ("Bb2","Bb2","Bb3","Bb5","F5","Ab5","C5","F3","Bb3","F4","G3","C4","F5","Eb5","Bb6","F6","Ab6","C6");
 		document.body.style.backgroundColor = "#DDD";
 		break;
 
 		case "13":
 		// Black Hole - Whole tones
-		var useScale = new Array ("F#1","C2","G#2","D3","A3","D#4","F4","B4","E5","A#5","F6","B6","F7");
+		var useScale = new Array ("F#2","C2","G#2","D3","A3","D#4","F4","B4","E5","A#5","F6","B6","F7");
 		document.body.style.backgroundColor = "#000";
 		break;
 
 		default:
 		// CM6
-		var useScale = new Array ("C1","C2","G2","C3","G3","C4","D4","E4","G4","A4","C5","D5","E5","G5","A5","C6","D6","E6","G6","A6","C7");
+		var useScale = new Array ("C2","C2","G2","C3","G3","C4","D4","E4","G4","A4","C5","D5","E5","G5","A5","C6","D6","E6","G6","A6","C7");
 		document.body.style.backgroundColor = "#5b79b5";
 		break;
 
@@ -304,7 +312,7 @@ function musicForSpaceports(notes){
 
 	// generate note basics
 	var volume = Math.random()*0.15
-	var attack = Math.random()*1000
+	var attack = Math.random()*1000 + 1000;
 	var length = (Math.random()*5000) + 5000;
 	var delay = Math.random()*(document.getElementById("active").value);
 
@@ -324,7 +332,13 @@ function musicForSpaceports(notes){
 	var playNote = notes[useScale[note]];
 
 	// play note
-	synth(playNote,volume,attack,release,x,y,z);
+	synth("sine",playNote,volume,attack,release,x,y,z);
+	// overtones?
+//	synth("sine",(playNote*2),(volume*0.00001),attack,release,x,y,z);
+//	synth("sine",(playNote*2.5),(volume*0.000005),attack,release,x,y,z);
+//	synth("sine",(playNote*5),(volume*0.000025),attack,release,x,y,z);
+//	synth("sine",(playNote*6),(volume*0.0000125),attack,release,x,y,z);
+//	synth("sine",(playNote*7),(volume*0.00000625),attack,release,x,y,z);
 
 	// visual tone
 
@@ -332,6 +346,7 @@ function musicForSpaceports(notes){
 	var ty = Math.random()*90 + 5;
 	var tid = Math.random()*999999999999;
 	var thing = document.createElement("div");
+	thing.innerHTML = useScale[note];
 	thing.id = "thing_"+tid;
 	thing.setAttribute("class","tone");
 	thing.setAttribute("style","left:"+tx+"%;top:"+ty+"%;");
@@ -370,7 +385,7 @@ function randomOrbit(x){
 <style>
 body {
 	font-family:  "Lucida Console", Monaco, monospace;
-	background-color: #666;
+	background-color: #333;
 	transition: background-color 10s ease;
 }
 
@@ -387,12 +402,17 @@ h1 {
 	height: auto;
 	padding: 10px;
 	position: fixed;
-	right: 10%;
-	top: 10%;
+	left: 20%;
+	top: 30%;
 	border: 1px solid transparent;
 	border-radius: 10px;
 	background-color: rgba(255,255,255,0.25);
 	z-index:9999;
+	opacity: 0.2;
+	transition: opacity 1s ease;
+}
+#choose:hover {
+	opacity: 1;
 }
 #choose input, select {
 	font-size: 24px;
@@ -411,12 +431,15 @@ h1 {
 	width: 50px;
 	height: 50px;
 	border-radius: 10px;
-	background-color: rgba(255,255,255,0.4);
+	background-color: rgba(255,255,255,0.25);
 	animation-name: tone;
 	animation-duration: 10s;
 	animation-iteration-count: 1;
 	animation-timing-function: linear;
 	z-index: 1;
+	text-align: center;
+	line-height: 50px;
+	color: rgba(0,0,0,0.2);
 }
 
 @keyframes tone {
@@ -432,11 +455,16 @@ h1 {
 	bottom: 10px;
 	right: 10px;
 	padding: 20px;
-	background-color: rgba(255,255,255,0.5);
-	width: 300px;
+	background-color: rgba(255,255,255,0.25);
+	width: 500px;
 	height: auto;
 	font-size: 12px;
 	border-radius:10px;
+	opacity: 0.2;
+	transition: opacity 1s ease;
+}
+#about:hover {
+	opacity: 1;
 }
 </style>
 </HEAD>
@@ -444,7 +472,7 @@ h1 {
 <h1>Music for Spaceports</h1>
 <div id="choose">
 	<select name="scale" id="scale" onchange="musicForSpaceports(notes);" title="This chooses the set of notes to pick from.">
-		<option value = -1 selected > No Destination Selected </option>
+		<option value = -1 selected > Off </option>
 		<option value = 0 > Sol </option>
 		<option value = 1 > Mercury </option>
 		<option value = 2 > Venus </option>
@@ -462,9 +490,9 @@ h1 {
 	</select>
 	<br/>
 	<select name="active" id="active" onchange="musicForSpaceports(notes);" title="This chooses the frequency of note choice.">
-		<option value=12000>Impulse Power</option>
-		<option value=6000 selected>Sublights</option>
-		<option value=2000>Warp Drive</option>
+		<option value=12000>Sparse</option>
+		<option value=6000 selected>Moderate</option>
+		<option value=2000>Dense</option>
 	</select>
 	<select name="drift" id="drift" onchange="drift(this.value);" title="This chooses wether or not to randomly move to other note sets.">
 		<option value="0">Maintain Orbit</option>
@@ -477,6 +505,15 @@ h1 {
 		<li><a href="https://www.html5rocks.com/en/tutorials/webaudio/intro/" target="_blank">Getting Started with Web Audio API - HTML5 Rocks</a></li>
 		<li><a href="https://modernweb.com/2013/10/28/audio-synthesis-in-javascript/" target="_blank">Audio Synthesis in JavaScript</a></li>
 	</ul>
+	<p>How it works:</p>
+	<p>Each destination has a defined set of notes.  Several random generators then determine how often to play a note, what note to play, and how long to sustain it.<p>
+	Options:
+	<ul>
+		<li>Destination: note set</li>
+		<li>Density: Frequency of note selection</li>
+		<li>Drift: Stay in current set or drift to others</li>
+	</ul>
+	<p>Note: Due to Internet Explorer/Edge lack of support for WebAudio, this will not work in Microsoft browsers.</p>
 </div>
 </BODY>
 </HTML>
