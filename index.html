@@ -217,6 +217,9 @@ notes['B9'] = 15804.264;
 
 
 var audio = new window.AudioContext();
+var source = audio.createBufferSource();
+source.buffer = buffer;
+source.connect(audio.destination);
 
 function synth(w,f,v,a,d,x,y,z) {
 	var attack = a,
