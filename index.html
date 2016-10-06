@@ -39,6 +39,7 @@
 	// iOS 9
 	document.addEventListener('touchend', fixAudioContext);
 })();	
+// END Fix iOS Audio Context by Blake Kus https://gist.github.com/kus/3f01d60569eeadefe3a1
 	
 	
 	
@@ -507,7 +508,7 @@ h1 {
 }
 	
 
-@media (max-width: 480px) {
+@media only screen and (max-device-width: 480px) {
 	body {
 		text-align: center;
 	}
