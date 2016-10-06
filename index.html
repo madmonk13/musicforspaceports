@@ -384,6 +384,7 @@ function randomOrbit(x){
 </script>
 <style>
 body {
+	text-align: center;
 	font-family:  "Lucida Console", Monaco, monospace;
 	background-color: #333;
 	transition: background-color 10s ease;
@@ -400,16 +401,17 @@ h1 {
 	text-align: center;
 	width: 500px;
 	height: auto;
-	padding: 10px;
-	position: fixed;
-	left: 20%;
-	top: 30%;
+	padding: 20px;
+	position: relative;
+	left: 50%;
+	margin: 10px 10px 10px -250px;
 	border: 1px solid transparent;
 	border-radius: 10px;
 	background-color: rgba(255,255,255,0.25);
 	z-index:9999;
 	opacity: 0.2;
 	transition: opacity 1s ease;
+
 }
 #choose:hover {
 	opacity: 1;
@@ -450,10 +452,10 @@ h1 {
 
 #about {
 	display: block;
-	position:fixed;
+	position: relative;
 	text-align: left;
-	bottom: 10px;
-	right: 10px;
+	left: 50%;
+	margin: 10px 10px 10px -250px;
 	padding: 20px;
 	background-color: rgba(255,255,255,0.25);
 	width: 500px;
