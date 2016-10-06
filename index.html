@@ -204,9 +204,11 @@ function synth(w,f,v,a,d,x,y,z) {
 	osc.frequency.value = f;
 	osc.type = w;
 	osc.connect(gain);
-	osc.start(0);
+	osc.noteOn(0);
+//	osc.start(0);
 	setTimeout(function() {
-		osc.stop(0);
+		osc.noteOff(0);
+//		osc.stop(0);
 		osc.disconnect(gain);
 		gain.disconnect(audio.destination);
 	}, decay)
