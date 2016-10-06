@@ -176,12 +176,7 @@ notes['A#9'] = 14917.24;
 notes['Bb9'] = 14917.24;
 notes['B9'] = 15804.264;
 
-if ("ontouchstart" in document.getElementById('scale')){
-	document.getElementById('scale').ontouchstart = "var audio = new window.AudioContext();";
-}
-else {
-	var audio = new window.AudioContext();
-}
+var audio = new window.AudioContext();
 
 function synth(w,f,v,a,d,x,y,z) {
 	var attack = a,
