@@ -176,8 +176,8 @@ notes['A#9'] = 14917.24;
 notes['Bb9'] = 14917.24;
 notes['B9'] = 15804.264;
 
-if ("ontouchstart" in document.documentElement){
-	body.ontouchstart = "var audio = new window.AudioContext();";
+if ("ontouchstart" in document.getElementById('scale')){
+	document.getElementById('scale').ontouchstart = "var audio = new window.AudioContext();";
 }
 else {
 	var audio = new window.AudioContext();
