@@ -374,7 +374,7 @@ function drift(v){
 }
 
 function randomOrbit(x){
-	var o = Math.floor(Math.random()*document.getElementById("scale").length);
+	var o = Math.floor(Math.random()*(document.getElementById("scale").length-1));
 	document.getElementById("scale").value = o;
 	musicForSpaceports(notes);
 	if ( x == 1 ){
