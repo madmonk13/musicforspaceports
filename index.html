@@ -176,6 +176,9 @@ notes['A#9'] = 14917.24;
 notes['Bb9'] = 14917.24;
 notes['B9'] = 15804.264;
 
+var liveNotes = 0;
+var maxLiveNotes = 0;
+
 var audio = new (window.AudioContext || window.webkitAudioContext)();
 
 if ( window.speechSynthesis ){
@@ -184,6 +187,8 @@ if ( window.speechSynthesis ){
 
 
 function synth(w,f,v,a,d,x,y,z) {
+console.log(liveNotes);
+	liveNotes++;
 	var attack = a,
 		decay = d,
 		gain = audio.createGain(),
@@ -207,6 +212,7 @@ function synth(w,f,v,a,d,x,y,z) {
 		osc.stop(0);
 		osc.disconnect(gain);
 		gain.disconnect(audio.destination);
+		liveNotes--;
 	}, decay)
 }
 
@@ -336,43 +342,46 @@ function musicForSpaceports(notes){
 	var length = (Math.random()*5000) + 5000;
 	var delay = Math.random()*(document.getElementById("active").value);
 
-	var x = (Math.random()*300 - 150);
-	var y = (Math.random()*300 - 150);
-	var z = (Math.random()*300 - 150);
+	if ( liveNotes < ( 18 - (document.getElementById("active").value/1000) ) ){
 
-	// pick note from scale at random
-	var note = Math.floor(Math.random()*(useScale.length));
+		var x = (Math.random()*300 - 150);
+		var y = (Math.random()*300 - 150);
+		var z = (Math.random()*300 - 150);
 
-	// attenuate high notes to make them less piercing
-	var volMod = 1 - (note/useScale.length);
-	volume = volume * volMod;
+		// pick note from scale at random
+		var note = Math.floor(Math.random()*(useScale.length));
 
-	// generate note length
-	var release = attack + length;
-	var playNote = notes[useScale[note]];
+		// attenuate high notes to make them less piercing
+		var volMod = 1 - (note/useScale.length);
+		volume = volume * volMod;
 
-	// play note
-	synth("sine",playNote,volume,attack,release,x,y,z);
-	// overtones?
-//	synth("sine",(playNote*2),(volume*0.00001),attack,release,x,y,z);
-//	synth("sine",(playNote*2.5),(volume*0.000005),attack,release,x,y,z);
-//	synth("sine",(playNote*5),(volume*0.000025),attack,release,x,y,z);
-//	synth("sine",(playNote*6),(volume*0.0000125),attack,release,x,y,z);
-//	synth("sine",(playNote*7),(volume*0.00000625),attack,release,x,y,z);
+		// generate note length
+		var release = attack + length;
+		var playNote = notes[useScale[note]];
 
-	// visual tone
+		// play note
+		synth("sine",playNote,volume,attack,release,x,y,z);
+		// overtones?
+	//	synth("sine",(playNote*2),(volume*0.00001),attack,release,x,y,z);
+	//	synth("sine",(playNote*2.5),(volume*0.000005),attack,release,x,y,z);
+	//	synth("sine",(playNote*5),(volume*0.000025),attack,release,x,y,z);
+	//	synth("sine",(playNote*6),(volume*0.0000125),attack,release,x,y,z);
+	//	synth("sine",(playNote*7),(volume*0.00000625),attack,release,x,y,z);
 
-	var tx = Math.random()*90 + 5;
-	var ty = Math.random()*90 + 5;
-	var tid = Math.random()*999999999999;
-	var thing = document.createElement("div");
-	thing.innerHTML = useScale[note];
-	thing.id = "thing_"+tid;
-	thing.setAttribute("class","tone");
-	thing.setAttribute("style","left:"+tx+"%;top:"+ty+"%;");
-	document.body.appendChild(thing);
-	var thing_remove = setTimeout(function(){document.getElementById("thing_"+tid).parentNode.removeChild(document.getElementById("thing_"+tid));},9900);
+		// visual tone
 
+		var tx = Math.random()*90 + 5;
+		var ty = Math.random()*90 + 5;
+		var tid = Math.random()*999999999999;
+		var thing = document.createElement("div");
+		thing.innerHTML = useScale[note];
+		thing.id = "thing_"+tid;
+		thing.setAttribute("class","tone");
+		thing.setAttribute("style","left:"+tx+"%;top:"+ty+"%;");
+		document.body.appendChild(thing);
+		var thing_remove = setTimeout(function(){document.getElementById("thing_"+tid).parentNode.removeChild(document.getElementById("thing_"+tid));},9900);
+
+	}
 
 	// play next note
 	t = setTimeout(function(){musicForSpaceports(notes);},delay);
