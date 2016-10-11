@@ -239,21 +239,18 @@ function musicForSpaceports(notes){
 		case "0":
 		//Sol - Fm M7
 		var useScale = new Array ("F2","F2","C2","F3","C3","F4","G#4","C5","E5","G#5","C6","E6","F#6","A6","C7");
-//		document.getElementById("planet").style.backgroundColor= "#FFCF48";
 		document.getElementById("planet").style.background = "radial-gradient(#f6a92d,#dc751b,#f4a031,#f8d767,#feffe1)";
 		break;
 
 		case "1":
 		//Mercury - BM7
 		var useScale = new Array ("B1","F#2","B2","F#3","B3","D#4","F#4","G#4","B4","D#5","F#5","G#5","B6","F#7");
-//		document.getElementById("planet").style.backgroundColor= "#99949a";
 		document.getElementById("planet").style.background = "linear-gradient(320deg,#eab760,#ae9168,#837165,#896c68,#2345a3)";
 		break;
 
 		case "2":
 		// Venus - G#M7 9 11
 		var useScale = new Array ("G#2","G#2","G#2","D#2","G#3","C4","D#4","G#4","C5","D#5","G5","A#5","C6","D#6","G6","Bb6","C7","Eb7");
-//		document.getElementById("planet").style.backgroundColor= "#e9d0af";
 		document.getElementById("planet").style.background = "linear-gradient(#d3a665,#e0b372,#d9ac69,#efcc8c,#ebc587,#ddb170)";
 		break;
 
@@ -261,14 +258,12 @@ function musicForSpaceports(notes){
 		// Mars - Dm7
 		var useScale = new Array ("D2","D2","A2","D3","F3","A3","D4","F4","A4","C5","D5","F5","A5","C6","D6","F6","A6","C7");
 		document.getElementById("planet").style.background = "linear-gradient(to bottom, #fb9b37 0%,#f57222 26%,#851006 51%,#aa2913 64%,#a63a1e 83%,#5c1a0c 100%)";
-//		document.getElementById("planet").style.background = "#ac7a48";
 		break;
 
 		case "5":
 		//Jupiter - Eb7
 		var useScale = new Array ("Eb2","Eb2","Bb2","Eb3","Bb3","Eb4","G4","Bb4","Db5","Eb5","G5","Bb5","Eb6","G6","Bb6","D7");
 		document.getElementById("planet").style.background = "linear-gradient(to bottom, #4f3e34 0%,#a68969 6%,#c5ae8e 11%,#b27e4e 18%,#ab6534 25%,#b06f39 30%,#ebc691 36%,#c98546 51%,#70361e 56%,#c18747 61%,#863112 72%,#e9aa67 85%,#c6a788 91%,#95744b 95%,#55432b 100%)";
-//		document.getElementById("planet").style.background = "#f0a478";
 		break;
 
 		case "6":
@@ -276,7 +271,6 @@ function musicForSpaceports(notes){
 		var useScale = new Array ("G2","G2","D2","G3","B3","D4","G4","B4","D5","F#5","B5","D6","G6","B6","D7");
 		document.getElementById("planet").style.background = "linear-gradient(to bottom, #3b4448 0%,#747162 4%,#757668 10%,#86836e 16%,#929175 23%,#d0bb84 36%,#cfac76 58%,#c09e6f 68%,#91876b 78%,#767557 92%,#454432 100%)";
 		document.getElementById("ring").style.display = "block";
-//		document.getElementById("planet").style.background = "#f6d5a3";
 		break;
 
 		case "7":
@@ -284,21 +278,18 @@ function musicForSpaceports(notes){
 		var useScale = new Array ("C#2","C#2","G#2","C#3","E3","G#3","C#4","E4","G#4","B4","D#5","F#5","G#5","C#6","E6","G#6","B6","D#7");
 		document.getElementById("planet").style.background = "linear-gradient(to bottom, #004ed4 0%,#11b2e6 9%,#78dbfa 27%,#62d0f3 44%,#d7ecf1 51%,#55c5ed 56%,#00acea 79%,#02a3e9 100%)";
 		document.getElementById("ring").style.display = "block";
-//		document.getElementById("planet").style.background = "#b9f3f3";
 		break;
 
 		case "8":
 		// Neptune - A6
 		var useScale = new Array ("A2","A2","E3","A3","B3","D4","E4","A4","D5","E5","A5","B5","D6","E6","A6","B6","D7");
 		document.getElementById("planet").style.background = "linear-gradient(to bottom, #003bd1 0%,#325acc 27%,#0320d4 40%,#4073de 55%,#044de8 72%,#032fb4 100%)";
-//		document.getElementById("planet").style.background = "#74a7f5";
 		break;
 
 		case "9":
 		// Pluto - Esus7
 		var useScale = new Array ("E2","E2","B2","E3","B3","E4","A4","B4","E5","A5","B5","E6","A6","B6","E7");
 		document.getElementById("planet").style.background = "linear-gradient(to bottom, #f7cda7 0%,#d6b79a 26%,#7b6148 70%,#362312 100%)";
-//		document.getElementById("planet").style.background = "transparent";
 		break;
 
 		case "10":
@@ -325,10 +316,15 @@ function musicForSpaceports(notes){
 		document.getElementById("planet").style.background= "#000";
 		break;
 
+		case "14":
+		// Nebula - Fsus7
+		var useScale = new Array ("F1","F2","C3","F4","Bb4","Eb5","F5","Bb5","C6","Eb6","F6","Bb6");
+		document.getElementById("planet").style.background= "transparent";
+		break;
+
 		default:
 		// CM6
 		var useScale = new Array ("C2","C2","G2","C3","G3","C4","D4","E4","G4","A4","C5","D5","E5","G5","A5","C6","D6","E6","G6","A6","C7");
-//		document.getElementById("planet").style.background = "#5b79b5";
 		document.getElementById("planet").style.background = "linear-gradient(to bottom, #ffffff 0%,#2989d8 21%,#66ad1b 48%,#1caf21 66%,#0048ad 84%,#0048ad 84%,#7db9e8 100%)";
 		break;
 
@@ -485,21 +481,24 @@ h1 {
 	position: fixed;
 	text-align: left;
 	left: 50%;
-	top:20%;
-	margin: 10px 10px 10px -250px;
+	top: 50%;
+	margin: -250px 10px 10px -250px;
 	padding: 20px;
 	background-color: #eee;
 	width: 500px;
-	height: auto;
+	height: 300px;
 	font-size: 12px;
 	border-radius:10px;
 	opacity: 0;
 	transition: opacity 1s ease;
 	z-index:9998;
+	overflow-y: scroll;
 }
+
 #about:hover {
 	opacity: 1;
 }
+
 @media only screen and (max-device-width: 480px) {
 	body {
 		text-align: center;
@@ -656,12 +655,13 @@ h1 {
 		<option value = 11 > Kuiper Belt </option>
 		<option value = 12 > The Final Frontier </option>
 		<option value = 13 > Black Hole </option>
+		<option value = 14 > Nebula </option>
 	</select>
 	<br/>
 	<select name="active" id="active" onchange="musicForSpaceports(notes);" title="This chooses the frequency of note choice.">
-		<option value=12000>Sparse</option>
-		<option value=6000 selected>Moderate</option>
-		<option value=2000>Dense</option>
+		<option value=16000>Sparse</option>
+		<option value=8000 selected>Moderate</option>
+		<option value=4000>Dense</option>
 	</select>
 	<select name="drift" id="drift" onchange="drift(this.value);" title="This chooses wether or not to randomly move to other note sets.">
 		<option value="0">Maintain Orbit</option>
