@@ -341,7 +341,7 @@ function musicForSpaceports(notes){
 	var length = (Math.random()*5000) + 5000;
 	var delay = Math.random()*(document.getElementById("active").value);
 
-	if ( liveNotes < ( 18 - (document.getElementById("active").value/1000) ) ){
+	if ( liveNotes < ( 18 - (document.getElementById("active").value/1000) )/2 ){
 
 		var x = (Math.random()*300 - 150);
 		var y = (Math.random()*300 - 150);
