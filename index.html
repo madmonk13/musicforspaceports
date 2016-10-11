@@ -232,12 +232,13 @@ function announceDestination(){
 
 function musicForSpaceports(notes){
 
+	document.getElementById("ring").style.display = "none";
+
 	if ( document.getElementById("scale").value == -1 ){
 		document.getElementById("planet").style.background = "transparent";
 		return;
 	}
 
-	document.getElementById("ring").style.display = "none";
 
 	switch(document.getElementById("scale").value){
 
