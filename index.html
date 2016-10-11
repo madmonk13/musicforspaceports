@@ -647,7 +647,7 @@ h1 {
 </div>
 <h1>Music for Spaceports</h1>
 <div id="choose">
-	<select name="scale" id="scale" onchange="announceDestination();musicForSpaceports(notes);" title="This chooses the set of notes to pick from." ontouchend="audio = new window.AudioContext();">
+	<select name="scale" id="scale" onchange="clearTimeout(t);announceDestination();musicForSpaceports(notes);" title="This chooses the set of notes to pick from." ontouchend="audio = new window.AudioContext();">
 		<option value = -1 selected > Off - Select Destination </option>
 		<option value = 0 > Sol </option>
 		<option value = 1 > Mercury </option>
@@ -666,7 +666,7 @@ h1 {
 		<option value = 14 > Nebula </option>
 	</select>
 	<br/>
-	<select name="active" id="active" onchange="musicForSpaceports(notes);" title="This chooses the frequency of note choice.">
+	<select name="active" id="active" onchange="clearTimeout(t);musicForSpaceports(notes);" title="This chooses the frequency of note choice.">
 		<option value=16000>Sparse</option>
 		<option value=8000 selected>Moderate</option>
 		<option value=4000>Dense</option>
