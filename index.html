@@ -187,6 +187,7 @@ if ( window.speechSynthesis ){
 
 
 function synth(w,f,v,a,d,x,y,z) {
+
 	liveNotes++;
 	var attack = a,
 		decay = d,
@@ -238,7 +239,6 @@ function musicForSpaceports(notes){
 		document.getElementById("planet").style.background = "transparent";
 		return;
 	}
-
 
 	switch(document.getElementById("scale").value){
 
@@ -362,8 +362,8 @@ function musicForSpaceports(notes){
 		// play note
 		synth("sine",playNote,volume,attack,release,x,y,z);
 		// overtones?
-	//	synth("sine",(playNote*2),(volume*0.00001),attack,release,x,y,z);
-	//	synth("sine",(playNote*2.5),(volume*0.000005),attack,release,x,y,z);
+	//	synth("sine",(playNote*2),volume,attack,release,x,y,z);
+	//	synth("sine",(playNote*2.5),volume,attack,release,x,y,z);
 	//	synth("sine",(playNote*5),(volume*0.000025),attack,release,x,y,z);
 	//	synth("sine",(playNote*6),(volume*0.0000125),attack,release,x,y,z);
 	//	synth("sine",(playNote*7),(volume*0.00000625),attack,release,x,y,z);
@@ -390,6 +390,9 @@ function musicForSpaceports(notes){
 
 var d;
 function drift(v){
+	if ( document.getElementById("scale").value == -1 ){
+		return
+	}
 	if ( v == 0 ){
 		return
 	}
@@ -431,20 +434,21 @@ h1 {
 	text-align: center;
 	width: 500px;
 	height: auto;
-	padding: 20px;
+	padding: 0 20px 20px 20px;
 	position: fixed;
 	left: 50%;
-	bottom: 0;
+	bottom: -160px;;
 	margin: 10px 10px 10px -250px;
 	border: 1px solid transparent;
 	border-radius: 10px;
 	background-color: #eee;
 	z-index: 9999;
 	opacity: 0.1;
-	transition: opacity 1s ease;
+	transition: all 1s ease;
 }
 #choose:hover {
 	opacity: 1;
+	bottom: 30px;
 }
 
 #choose:hover + #about {
@@ -559,12 +563,11 @@ h1 {
 	left: 50%;
 	width: 350px;
 	margin-left: -175px;
-	background-color: #fff;
-	height: 2px;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #fff, rgba(0, 0, 0, 0));
+	height: 10px;
 	z-index: 100;
 	border-radius: 10px;
 	opacity: 0.5;
-/*	transform: rotate(-3deg);*/
 }
 
 /* Stars 
@@ -648,6 +651,7 @@ h1 {
 </div>
 <h1>Music for Spaceports</h1>
 <div id="choose">
+	<h3>Settings</h3>
 	<select name="scale" id="scale" onchange="clearTimeout(t);announceDestination();musicForSpaceports(notes);" title="This chooses the set of notes to pick from." ontouchend="audio = new window.AudioContext();">
 		<option value = -1 selected > Off - Select Destination </option>
 		<option value = 0 > Sol </option>
