@@ -234,6 +234,9 @@ function announceDestination(){
 function musicForSpaceports(notes){
 
 	document.getElementById("ring").style.display = "none";
+	document.getElementById("nebula1").style.display= "none";
+	document.getElementById("nebula2").style.display= "none";
+	document.getElementById("nebula3").style.display= "none";
 
 	if ( document.getElementById("scale").value == -1 ){
 		document.getElementById("planet").style.background = "transparent";
@@ -319,13 +322,17 @@ function musicForSpaceports(notes){
 		case "13":
 		// Black Hole - Whole tones
 		var useScale = new Array ("F#2","C2","G#2","D3","A3","D#4","F4","B4","E5","A#5","F6","B6","F7");
-		document.getElementById("planet").style.background= "#000";
+		document.getElementById("planet").style.background = "radial-gradient(#000,#000,rgba(255,255,255,0.2))";
 		break;
 
 		case "14":
 		// Nebula - Fsus7
 		var useScale = new Array ("F1","F2","C3","F4","Bb4","Eb5","F5","Bb5","C6","Eb6","F6","Bb6");
 		document.getElementById("planet").style.background= "transparent";
+		document.getElementById("nebula1").style.display= "block";
+		document.getElementById("nebula2").style.display= "block";
+		document.getElementById("nebula3").style.display= "block";
+
 		break;
 
 		default:
@@ -637,6 +644,62 @@ h1 {
 #announce {
 	display: none;
 }
+
+#nebula1, #nebula2, #nebula3 {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+#nebula1 {
+  background-image: 
+    radial-gradient(200px 200px at 35% 35%, rgba(201,62,155,0.5), rgba(0,0,0,0)),
+    radial-gradient(200px 200px at 20% 40%, rgba(201,62,155,0.5), rgba(0,0,0,0)),
+    radial-gradient(300px 100px at 50% 45%, rgba(201,62,155,0.5), rgba(0,0,0,0)),
+    radial-gradient(200px 200px at 55% 60%, rgba(201,62,155,0.5), rgba(0,0,0,0)),
+    radial-gradient(200px 200px at 65% 55%, rgba(201,62,155,0.5), rgba(0,0,0,0)),
+    radial-gradient(200px 215px at 75% 48%, rgba(201,62,155,0.5), rgba(0,0,0,0));
+  opacity: 1;
+  animation-name: nebula;
+  animation-duration: 5s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+#nebula2 {
+  background-image: 
+    radial-gradient(200px 200px at 35% 65%, rgba(91,37,125,0.5), rgba(0,0,0,0)),
+    radial-gradient(200px 200px at 20% 50%, rgba(91,37,125,0.5), rgba(0,0,0,0)),
+    radial-gradient(300px 100px at 50% 55%, rgba(91,37,125,0.5), rgba(0,0,0,0)),
+    radial-gradient(200px 200px at 55% 40%, rgba(91,37,125,0.5), rgba(0,0,0,0)),
+    radial-gradient(200px 200px at 65% 35%, rgba(91,37,125,0.5), rgba(0,0,0,0)),
+    radial-gradient(200px 215px at 75% 58%, rgba(91,37,125,0.5), rgba(0,0,0,0));
+  opacity: 1;
+  animation-name: nebula;
+  animation-duration: 6s
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+}
+#nebula3 {
+  background-image: 
+    radial-gradient(200px 200px at 75% 65%, rgba(97,119,169,0.5), rgba(0,0,0,0)),
+    radial-gradient(200px 200px at 60% 50%, rgba(97,119,169,0.5), rgba(0,0,0,0)),
+    radial-gradient(300px 100px at 50% 25%, rgba(97,119,169,0.5), rgba(0,0,0,0)),
+    radial-gradient(200px 200px at 45% 40%, rgba(97,119,169,0.5), rgba(0,0,0,0)),
+    radial-gradient(200px 200px at 35% 35%, rgba(97,119,169,0.5), rgba(0,0,0,0)),
+    radial-gradient(200px 215px at 25% 58%, rgba(97,119,169,0.5), rgba(0,0,0,0));
+  opacity: 1;
+  animation-name: nebula;
+  animation-duration: 7s
+  animation-iteration-count: infinite;
+}
+@keyframes nebula {
+	0% { opacity: 1; transform: scale(1,1); }
+	50% { opacity: 0.75; transform: scale(1.1,1.1); }
+	100% { opacity: 1;transform: scale(1,1); }
+}
+
 </style>
 </HEAD>
 <BODY onload="musicForSpaceports(notes);">
@@ -649,6 +712,10 @@ h1 {
   <div class="stars"></div>
   <div class="stars"></div>
 </div>
+<BODY>
+<div id="nebula1"></div>
+<div id="nebula2"></div>
+<div id="nebula3"></div>
 <h1>Music for Spaceports</h1>
 <div id="choose">
 	<h3>Settings</h3>
