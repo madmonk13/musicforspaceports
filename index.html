@@ -719,7 +719,7 @@ h1 {
 <h1>Music for Spaceports</h1>
 <div id="choose">
 	<h3>Settings</h3>
-	<select name="scale" id="scale" onchange="clearTimeout(t);announceDestination();musicForSpaceports(notes);" title="This chooses the set of notes to pick from." ontouchend="audio = new window.AudioContext();">
+	<select name="scale" id="scale" onclick="audio.play();" onchange="clearTimeout(t);announceDestination();musicForSpaceports(notes);" title="This chooses the set of notes to pick from." ontouchend="audio = new window.AudioContext();">
 		<option value = -1 selected > Off - Select Destination </option>
 		<option value = 0 > Sol </option>
 		<option value = 1 > Mercury </option>
