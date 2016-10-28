@@ -345,7 +345,7 @@ function musicForSpaceports(notes){
 
 	// generate note basics
 	var volume = Math.random()*0.15
-	var attack = Math.random()*1000 + 1000;
+	var attack = Math.random()*1000 + 2000;
 	var length = (Math.random()*5000) + 5000;
 	var delay = Math.random()*(document.getElementById("active").value);
 
@@ -479,7 +479,8 @@ h1 {
 	width: 50px;
 	height: 50px;
 	border-radius: 25px;
-	background-color: rgba(255,255,255,0.25);
+	background-image: radial-gradient( rgba(255,255,255,0.3), rgba(255,255,255,0));
+/*	background-color: rgba(255,255,255,0.25);*/
 	animation-name: tone;
 	animation-duration: 10s;
 	animation-iteration-count: 1;
