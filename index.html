@@ -470,11 +470,11 @@ h1 {
 	opacity: 1;
 	bottom: 30px;
 }
-
+/*
 #choose:hover + #about {
 	opacity: 1;
 }
-
+*/
 #choose input, select {
 	font-size: 24px;
 	color: #000;
@@ -520,18 +520,40 @@ h1 {
 	padding: 20px;
 	background-color: #eee;
 	width: 500px;
-	height: 300px;
+	height: auto;
 	font-size: 12px;
 	border-radius:10px;
 	opacity: 0;
 	transition: opacity 1s ease;
 	z-index:9998;
-	overflow-y: scroll;
 }
 
+#closeAbout {
+	display: block;
+	text-align: center;
+	float: right;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-decoration: none;
+	margin: -10px -10px 10px 10px;
+	font-size: 18px;
+	font-family: Arial, Sans-Serif;
+	color: #000;
+	background-color: #eee;
+	border-radius: 10px;
+	transition: all 1s;
+}
+
+#closeAbout:hover {
+	background-color: #000;
+	color: #eee;
+}
+/*
 #about:hover {
 	opacity: 1;
 }
+*/
 
 @media only screen and (max-device-width: 480px) {
 	body {
@@ -765,8 +787,10 @@ h1 {
 		<option value=-1>No Announcements</option>
 		<option value=1>Announce Destination</option>
 	</select>
+	<a href="javascript:void(0);" onclick="document.getElementById('about').style.opacity=1;">About</a>
 </div>
 <div id="about">
+	<a href='javascript:void(0);' onclick="document.getElementById('about').style.opacity=0;" id="closeAbout">&#10006;</a>
 	<p>This is a quick project I put together in effort to learn HTML5's AudioContext.  It was inspired, and named after, Brian Eno's "Music for Airports".  Thanks to the following tutorials:</p>
 	<ul>
 		<li><a href="https://www.html5rocks.com/en/tutorials/webaudio/intro/" target="_blank">Getting Started with Web Audio API - HTML5 Rocks</a></li>
