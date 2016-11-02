@@ -206,12 +206,15 @@ function synth(w,f,v,a,l,d,x,y,z) {
 	osc.type = w;
 	osc.connect(gain);
 	osc.start(0);
+
+	var stoptime = (a + l + d) * 1.1;
+
 	setTimeout(function() {
 		osc.stop(0);
 		osc.disconnect(gain);
 		gain.disconnect(audio.destination);
 		liveNotes--;
-	}, (a + l + d) )
+	}, stoptime )
 }
 
 var t;
