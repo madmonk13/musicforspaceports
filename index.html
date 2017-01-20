@@ -255,7 +255,6 @@ function unlock() {
 }
 	
 function musicForSpaceports(notes){
-	unlock();
 	document.getElementById("ring").style.display = "none";
 	document.getElementById("nebula1").style.display= "none";
 	document.getElementById("nebula2").style.display= "none";
@@ -763,7 +762,7 @@ h1 {
 
 </style>
 </HEAD>
-<BODY onload="musicForSpaceports(notes);">
+<BODY onload="unlock();musicForSpaceports(notes);">
 <div id="planet"></div>
 <div id="ring"></div>
 <div id="space">
