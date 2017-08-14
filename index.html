@@ -179,11 +179,7 @@ notes['B9'] = 15804.264;
 var liveNotes = 0;
 var maxLiveNotes = 0;
 
-if('webkitAudioContext' in window) {
-    var audio = new webkitAudioContext();
-}
-	
-//var audio = new (window.AudioContext || window.webkitAudioContext)();
+var audio = new (window.AudioContext || window.webkitAudioContext)();
 
 if ( window.speechSynthesis ){
 	var announce = window.speechSynthesis;
