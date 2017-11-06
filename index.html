@@ -4,6 +4,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <TITLE>Music for Spaceports</TITLE>
 <script>
+	
+window.addEventListener('touchstart', function() {
+	// create empty buffer
+	var buffer = myContext.createBuffer(1, 1, 22050);
+	var source = myContext.createBufferSource();
+	source.buffer = buffer;
+	// connect to output (your speakers)
+	source.connect(myContext.destination);
+	// play the file
+	source.noteOn(0);
+}, false);
+	
 var notes = [];
 notes['C0'] = 16.351;
 notes['C#0'] = 17.324;
