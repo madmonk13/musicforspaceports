@@ -460,7 +460,7 @@ body {
 
 h1 {
 	font-size: 36px;
-	color: rgba(255,255,255,0.25);
+	color: rgba(255,255,255,0.75);
 	padding: 20px 40px;
 }
 
@@ -564,11 +564,14 @@ h1 {
 	background-color: #000;
 	color: #eee;
 }
-/*
-#about:hover {
-	opacity: 1;
+
+#about_icon a, #config_icon a{
+	display: none;
 }
-*/
+
+#closeAbout_mobile, #closeChoose_mobile {
+	display: none;
+}
 
 @media only screen and (max-device-width: 480px) {
 	body {
@@ -579,6 +582,7 @@ h1 {
 		font-size: 18px;
 	}
 	#choose, #about {
+		display: none;
 		width: auto;
 		opacity: 0.75;
 		position: relative;
@@ -597,9 +601,52 @@ h1 {
 		margin: 5px;
 		height: auto;
 	}
-	#choose {
-		margin-top: 150%;
+	#closeAbout {
+		display: none;
 	}
+	#closeAbout_mobile, #closeChoose_mobile {
+		display: block;
+		text-align: center;
+		float: right;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		text-decoration: none;
+		margin: -10px -10px 0 0;
+		font-size: 18px;
+		font-family: Arial, Sans-Serif;
+		color: #000;
+		background-color: #eee;
+		border-radius: 10px;
+		transition: all 1s;
+	}
+
+	#closeChoose_mobile {
+		margin: 10px -10px 0 0;
+	}
+
+
+	#about_icon a {
+		display: block;
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+		color: #fff;
+		opacity: 0.75;
+		font-size: 3em;
+		text-decoration: none;
+	}
+	#config_icon a{
+		display: block;
+		position: fixed;
+		bottom: 10px;
+		left: 10px;
+		color: #fff;
+		opacity: 0.75;
+		font-size: 3em;
+		text-decoration: none;
+	}
+	#aboutLink { display: none; }
 }	
 
 #planet {
@@ -772,6 +819,8 @@ h1 {
 <div id="nebula3"></div>
 <h1>Music for Spaceports</h1>
 <div id="choose">
+	<a href='javascript:void(0);' onclick="document.getElementById('choose').style.display='none';" id="closeChoose_mobile">&#10006;</a>
+	<a name="choose">
 	<h3>Settings</h3>
 	<select name="scale" id="scale" onchange="clearTimeout(t);announceDestination();musicForSpaceports(notes);" title="This chooses the set of notes to pick from." ontouchend="audio = new window.AudioContext();">
 		<option value = -1 selected > Off - Select Destination </option>
@@ -805,17 +854,19 @@ h1 {
 		<option value=-1>No Announcements</option>
 		<option value=1>Announce Destination</option>
 	</select>
-	<a href="javascript:void(0);" onclick="document.getElementById('about').style.opacity=1;">About</a>
+	<a href="javascript:void(0);" onclick="document.getElementById('about').style.opacity=1;" id="aboutLink">About</a>
 </div>
 <div id="about">
+	<a name="about">
 	<a href='javascript:void(0);' onclick="document.getElementById('about').style.opacity=0;" id="closeAbout">&#10006;</a>
+	<a href='javascript:void(0);' onclick="document.getElementById('about').style.display='none';" id="closeAbout_mobile">&#10006;</a>
 	<p>This is a quick project I put together in effort to learn HTML5's AudioContext.  It was inspired, and named after, Brian Eno's "Music for Airports".  Thanks to the following tutorials:</p>
 	<ul>
 		<li><a href="https://www.html5rocks.com/en/tutorials/webaudio/intro/" target="_blank">Getting Started with Web Audio API - HTML5 Rocks</a></li>
 		<li><a href="https://modernweb.com/2013/10/28/audio-synthesis-in-javascript/" target="_blank">Audio Synthesis in JavaScript</a></li>
 		<li><a href="https://codepen.io/keithclark/pen/zqcEd" target="_blank">Thanks to this site for the starfield css!</a></li>
 		<li><a href="http://www.colorzilla.com/gradient-editor/" target="_blank">Planet gradients created using this tool.</a></li>
-		<li><a href="https://paulbakaus.com/tutorials/html5/web-audio-on-ios/" target="_blank">Thanks to this site for iOS compatibility.</li>
+		<li><a href="https://paulbakaus.com/tutorials/html5/web-audio-on-ios/" target="_blank">Thanks to this site for iOS compatibility.</a></li>
 	</ul>
 	<p>How it works:</p>
 	<p>Each destination has a defined set of notes.  Several random generators then determine how often to play a note, what note to play, and how long to sustain it.<p>
@@ -829,13 +880,15 @@ h1 {
 	<p>Note: Due to Internet Explorer/Edge lack of support for WebAudio, this will not work in Microsoft browsers.</p>
 
 </div>
+<div id="config_icon"><a href='#choose' onclick='document.getElementById("choose").style.display="block";'>&#9881;</a></div>
+<div id="about_icon"><a href='#about' onclick='document.getElementById("about").style.display="block";'>?</a></div>
 <script>
 if ( !window.speechSynthesis ){
 	// hide announcements if speech not supported.
 	document.getElementById("announce").style.display = "none";
 }
 	
-  document.addEventListener("touchmove", function(){musicForSpaceports(notes);});
+//  document.addEventListener("touchmove", function(){musicForSpaceports(notes);});
 
 	
 </script>
