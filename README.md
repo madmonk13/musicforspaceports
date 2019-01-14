@@ -6,13 +6,15 @@
 		<li><a href="http://www.colorzilla.com/gradient-editor/" target="_blank">Planet gradients created using this tool.</a></li>
 		<li><a href="https://paulbakaus.com/tutorials/html5/web-audio-on-ios/" target="_blank">Thanks to this site for iOS compatibility.</a></li>
 	</ul>
-	<p>How it works:</p>
+
+<a href='https://madmonk13.github.io/musicforspaceports/'>Click here to view Music for Spaceports</a>
+
+<p>How it works:</p>
 	<p>Each destination has a defined set of notes.  Several random generators then determine how often to play a note, what note to play, and how long to sustain it.<p>
 	Options:
 	<ul>
 		<li>Destination: note set</li>
 		<li>Density: Frequency of note selection</li>
 		<li>Drift: Stay in current set or drift to others</li>
-		<!--<li>Announcements: If supported, use speech synthesis to announce destination</li>-->
 	</ul>
 	<p>Note: Due to Internet Explorer/Edge lack of support for WebAudio, this will not work in Microsoft browsers.</p>
