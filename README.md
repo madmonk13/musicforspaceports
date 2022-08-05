@@ -18,3 +18,7 @@
 		<li>Drift: Stay in current set or drift to others</li>
 	</ul>
 	<p>Note: Due to Internet Explorer/Edge lack of support for WebAudio, this will not work in Microsoft browsers.</p>
+
+
+Todo:
+1. Sometimes doesn't work with iOS devices - what's up with that?
